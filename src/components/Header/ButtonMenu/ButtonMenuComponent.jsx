@@ -1,10 +1,17 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ButtonMenuComponent.css";
-import { categories } from "../../../asyncMock.js"
+import { getProducts } from "../../../firebase/firebase.js";
 
 const ButtonMenuComponent = () => {
 
-  categories.sort()
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts().then(products => setProducts(products))
+  }, []);
+
+  const categories = [...new Set(products.map(product => product.category))];
 
   return (
     <>
