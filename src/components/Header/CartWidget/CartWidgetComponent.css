@@ -1,0 +1,51 @@
+.nav-right {
+  color: #022b3a;
+  padding-left: 15px;
+  position: relative;
+}
+
+.nav-right > ul > li {
+  float: left;
+  padding-right: 20px;
+}
+
+.nav-right > ul > li:last-child {
+  padding-right: 0;
+}
+
+.nav-cart-inner {
+  display: table-cell;
+  vertical-align: middle;
+  height: 80px;
+}
+.nav-cart-inner a{
+  color: #022b3a !important;
+}
+
+.nav-cart-icon {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 16px;
+  font-size: 25px;
+  color: inherit;
+}
+
+.nav-cart-icon:hover {
+  color: inherit;
+}
+
+.nav-cart-badge {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+  display: block;
+  background-color: #1f7a8c;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}

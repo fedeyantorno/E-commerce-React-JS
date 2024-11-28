@@ -1,0 +1,15 @@
+.btn-text {
+    font-size: 12px !important;
+}
+
+.text-price {
+    font-size: 14px;
+}
+
+h4.card-title {
+    color: #022b3a;
+}
+
+h4.card-title:hover {
+    color: #1f7a8c;
+}

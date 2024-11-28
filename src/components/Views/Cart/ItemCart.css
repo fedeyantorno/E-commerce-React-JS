@@ -1,0 +1,38 @@
+.btn-text {
+    font-size: 12px !important;
+}
+
+.text-price {
+    font-size: 14px;
+}
+
+h4.card-title {
+    color: #022b3a;
+}
+
+h4.card-title:hover {
+    color: #1f7a8c;
+}
+
+img.img-item-cart {
+    height: 200px !important;
+    width: auto;
+}
+
+.cart-item {
+    height: 200px;
+    width: 800px;
+    border: solid 2px #022b3a;
+}
+
+.block-admin-cant {
+    height: 80px !important;
+}
+
+.text-item-count {
+    font-size: 12px;
+    color: #708285;
+    margin-right: 10px;
+    padding-bottom: 10px;
+
+}
