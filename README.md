@@ -2,7 +2,7 @@
 
 ## Reseña del proyecto:
 
-El proyecto de la cración de un e-commerce conformado por un listado general de productos, navegación por categorías, detalles de producto, agregado a carrito, administración de carrito y proceso de checkout
+Creación de un e-commerce conformado por listado general de productos, navegación por categorías, detalles de producto, agregado a carrito, administración de carrito.
 
 ## Tecnologías utilizadas:
 
@@ -20,9 +20,8 @@ El proyecto de la cración de un e-commerce conformado por un listado general de
 
 [Cuisine Bazar](https://federicoyantorno.dev/)
 
-### ScreenShots de la web 📸
-**Logo**
-![Logo](./src/components/Header/Brand/logo-cuisine.png)
+
+### ScreenShot de la web 📸
 
 **Home**
 ![Home](./public/home-cuisine-bazar.png)
@@ -31,6 +30,5 @@ El proyecto de la cración de un e-commerce conformado por un listado general de
 > 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de Firebase
 
 ```
-_Ejecutar servidor de prueba_
-npm run dev
+Ejecutar servidor de prueba - npm run dev
 ```
