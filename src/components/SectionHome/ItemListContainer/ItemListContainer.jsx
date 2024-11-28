@@ -1,4 +1,3 @@
-//import { getCategory, getProducts } from "../../../asyncMock.js";
 import { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import { useParams } from "react-router-dom";
@@ -14,8 +13,8 @@ export default function ItemListContainer({ title }) {
 
   useEffect(() => {
     if (categoryId) {
-      console.log(categoryId);
       getCategory(categoryId).then(products => setProducts(products))
+      console.log(categoryId)
     } else {
       getProducts().then(products => setProducts(products))
       console.log(products)
@@ -26,9 +25,7 @@ export default function ItemListContainer({ title }) {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);    
-    
     return () => clearTimeout(timer);
-
   }, []);
 
   return (

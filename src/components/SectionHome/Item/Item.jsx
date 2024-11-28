@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Item.css";
 
 export default function Item({ product }) {
+  
   return (
     <div className="card">
       <Link to={`/item/${product.id}`}><img src={product.image} className="card-img-top" alt={product.name} /></Link>

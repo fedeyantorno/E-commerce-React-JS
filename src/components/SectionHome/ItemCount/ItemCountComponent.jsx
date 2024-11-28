@@ -12,9 +12,9 @@ export default function ItemCountComponent({stock}) {
     return (
         <>
         <div className="btn-count-elements">
-        <button onClick={handleClickInc} className='btn btn-outline-secondary btn-sm btn-counter'>+</button>
-        <p className="text-counter">{counter}</p>
         <button onClick={handleClickDec} className='btn btn-outline-secondary btn-sm btn-counter'>-</button>
+        <p className="text-counter">{counter}</p>
+        <button onClick={handleClickInc} className='btn btn-outline-secondary btn-sm btn-counter'>+</button>
         </div>
         </>
     )

@@ -6,12 +6,12 @@ import { getFirestore, doc, getDoc, getDocs, collection, query, where } from 'fi
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDjbqLsZO5sRGS7rynfL02lpAFgev_PeLQ",
-  authDomain: "proyecto-react-e-commerc-95a59.firebaseapp.com",
-  projectId: "proyecto-react-e-commerc-95a59",
-  storageBucket: "proyecto-react-e-commerc-95a59.firebasestorage.app",
-  messagingSenderId: "930601880127",
-  appId: "1:930601880127:web:dca754a6e90694db76c68a"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
