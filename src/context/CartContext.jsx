@@ -10,16 +10,13 @@ export function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     // funciones para administrar cambios en el cart
-    const addItem = (item, quantity, addCart, goCart, itemCount) => {
+    const addItem = (item, quantity) => {
       // Pasamos la cantidad de un mismo producto
       const itemWithQuantity = {
         ...item,
         quantity: quantity
-    }
+      }
         setCart([...cart, itemWithQuantity])
-        //addCart.classList.add('hide');
-        //goCart.classList.remove('hide');
-        //itemCount.setAttribute('class', 'hidden')
     }
     // Obtenemos la cantidad de cada producto
     const getItemQuantity = (itemId) => {

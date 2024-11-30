@@ -10,11 +10,12 @@ export default function ItemDetail({product}) {
 
   const [quantity, setQuantity] = useState(1)
 
-  const addCart = document.getElementById('add-cart')
-  const goCart = document.getElementById('go-cart')
-  const itemCount = document.getElementById('item-count')
+  const [sendCart, setSendCart] = useState(false)
 
-  const handleClick = () => addItem(product, quantity, addCart, goCart, itemCount)
+  const handleClick = () => {
+    addItem(product, quantity)
+    setSendCart(true)
+  }
 
   const sendCounterValue = count => setQuantity(count)
 
@@ -43,19 +44,28 @@ export default function ItemDetail({product}) {
             {product.stock === 0 ? (
               <p className="text-danger">Producto sin stock</p>
             ) : (
-              <>
-              <div id="item-count">
-            <ItemCountComponent stock={product.stock}
-            sendCounterValue={sendCounterValue}/>
-          </div>
-          <div >
-            <button onClick={handleClick} className="btn btn-primary btn-text" id="add-cart">
+            <>
+              {!sendCart ? (
+                <>
+                <div>
+                <ItemCountComponent stock={product.stock}
+                sendCounterValue={sendCounterValue}/>
+              </div>
+              <div>
+              <button onClick={handleClick} className="btn btn-primary btn-text">
               Añadir al carrito
             </button>
-            <Link to={'/cart'}> <button className="btn btn-primary btn-text hide" id="go-cart">
-              Ir al carrito
-            </button> </Link>
-          </div>
+              </div>
+              </>
+              ) : (
+                <div >                
+                <Link to={'/cart'}>
+                <button className="btn btn-primary btn-text">
+                  Ir al carrito
+                </button>
+                </Link>
+              </div>
+            )}
           </>
         )}
         </div>

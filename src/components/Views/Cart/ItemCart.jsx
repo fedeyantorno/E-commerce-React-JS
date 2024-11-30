@@ -65,7 +65,7 @@ export default function ItemCart({ product }) {
             </div>
 
             <div className="d-flex justify-content-start align-items-center">
-              <p className="text-item-count mt-2">Agregue o reste items </p>
+              <p className="text-item-count mt-2">Agregue o elimine items </p>
               <div>
                 <ItemCountComponent stock={product.stock} sendCounterValue={sendCounterValue} initial={quantity}/>
               </div>
