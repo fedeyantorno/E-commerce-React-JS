@@ -9,7 +9,7 @@ const cartIcon = <FontAwesomeIcon icon={faBasketShopping} />
 
 export default function CartWidgetComponent() {
 
-  const [cart, setCart] = useContext(CartContext)
+  const [, , , , getQuantity] = useContext(CartContext)
 
   return (
     <li className="nav-right">
@@ -18,7 +18,7 @@ export default function CartWidgetComponent() {
           <div className="nav-cart-inner">
             <Link to={'/cart'} className="nav-cart-icon">
               {cartIcon}
-              <span className="nav-cart-badge">{cart.length}</span>
+              <span className="nav-cart-badge">{getQuantity()}</span>
             </Link>
           </div>
         </li>

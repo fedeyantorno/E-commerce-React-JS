@@ -21,7 +21,7 @@ export default function Cart() {
     }, 500);
     
     return () => clearTimeout(timer);
-  }, []);
+  }, [cart]);
   
   return (
     <>

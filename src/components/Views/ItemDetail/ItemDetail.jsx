@@ -1,20 +1,22 @@
 import ItemCountComponent from "../../SectionHome/ItemCount/ItemCountComponent";
 import "./ItemDetail.css";
-
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext.jsx";
 
 export default function ItemDetail({product}) {
 
-
   const [, , addItem] = useContext(CartContext)
+
+  const [quantity, setQuantity] = useState(1)
 
   const addCart = document.getElementById('add-cart')
   const goCart = document.getElementById('go-cart')
   const itemCount = document.getElementById('item-count')
 
-  const handleClick = () => addItem(product, addCart, goCart, itemCount)
+  const handleClick = () => addItem(product, quantity, addCart, goCart, itemCount)
+
+  const sendCounterValue = count => setQuantity(count)
 
   return (
     <div className="row">
@@ -38,8 +40,13 @@ export default function ItemDetail({product}) {
         <h5 className="single-product-description-price mt-3"><span className="grey">Precio:</span> <span className="green">${product.price}.-</span></h5>
         <p className="card-text"><span className="grey">Stock:</span> <span className="green">{product.stock}</span></p>
         <div className="d-flex flex-row align-items-center gap-4 mt-4">
-          <div id="item-count">          
-            <ItemCountComponent stock={product.stock}/>
+            {product.stock === 0 ? (
+              <p className="text-danger">Producto sin stock</p>
+            ) : (
+              <>
+              <div id="item-count">
+            <ItemCountComponent stock={product.stock}
+            sendCounterValue={sendCounterValue}/>
           </div>
           <div >
             <button onClick={handleClick} className="btn btn-primary btn-text" id="add-cart">
@@ -49,6 +56,8 @@ export default function ItemDetail({product}) {
               Ir al carrito
             </button> </Link>
           </div>
+          </>
+        )}
         </div>
       </div>
     </div>

@@ -1,13 +1,19 @@
 import { useState } from "react"
 import "./ItemCountComponent.css"
 
-export default function ItemCountComponent({stock}) {
+export default function ItemCountComponent({stock, sendCounterValue, initial}) {
 
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(initial || 1)
 
-    const handleClickInc = () => {if (counter < stock) {setCounter(counter + 1)}}
+    const handleClickInc = () => {if (counter < stock) {
+        setCounter(counter + 1)
+        sendCounterValue(counter + 1)
+    }}
 
-    const handleClickDec = () => {if (counter > 1) {setCounter(counter - 1)}}
+    const handleClickDec = () => {if (counter > 1) {
+        setCounter(counter - 1)
+        sendCounterValue(counter - 1)
+    }}
 
     return (
         <>
