@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/Views/ItemDetail/ItemDetailContain
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Views/Cart/Cart";
 import { ItemCountProvider } from "./context/ItemCountContext";
+import Checkout from "./components/Views/Checkout/Checkout";
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route exact path="/category/:categoryId" element={<ItemListContainer title = 'Productos'/>} />
           <Route exact path="/item/:prodId" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
         </div>
         </section>

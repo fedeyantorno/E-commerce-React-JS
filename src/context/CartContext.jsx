@@ -27,12 +27,16 @@ export function CartProvider({ children }) {
     const getQuantity = () => {
         return cart.reduce((total, item) => total + item.quantity, 0)
     }
+    // Obtenemos el precio total del cart
+    const getTotalPrice = () => {
+        return cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+    }
 
     console.log(cart)
     console.log(cart.length)
 
   return (
-    <CartContext.Provider value={[cart, setCart, addItem, getItemQuantity, getQuantity]}>
+    <CartContext.Provider value={[cart, setCart, addItem, getItemQuantity, getQuantity, getTotalPrice]}>
       {children}
     </CartContext.Provider>
   );

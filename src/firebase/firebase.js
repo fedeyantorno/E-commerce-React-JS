@@ -81,3 +81,14 @@ export async function getSingleProduct(id) {
   
 }
 
+//Agregar una nueva orden de pedido
+export async function sendOrder(order) {
+    const ordersCollection = collection(db, 'orders');
+    try {
+      const docRef = await addDoc(ordersCollection, order);
+      return docRef.id;
+    } catch (error) {
+      console.error('Error al agregar el documento nuevo ', error);
+    }
+  }
+

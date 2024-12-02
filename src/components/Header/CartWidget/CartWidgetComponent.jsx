@@ -5,10 +5,10 @@ import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
 
-const cartIcon = <FontAwesomeIcon icon={faBasketShopping} />
 
 export default function CartWidgetComponent() {
-
+  
+  const cartIcon = <FontAwesomeIcon icon={faBasketShopping} />
   const [, , , , getQuantity] = useContext(CartContext)
 
   return (

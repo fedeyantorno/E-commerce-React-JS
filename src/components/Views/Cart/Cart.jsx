@@ -5,7 +5,7 @@ import LoadingComponent from "../../LoadingComponent";
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, , , , getTotalPrice] = useContext(CartContext);
   // Hacemos un renderizado condicional con el emptyCart
   const [emptyCart, setEmptyCart] = useState(0);
   // Hacemos un renderizado condicional con el loadingComponent
@@ -42,7 +42,8 @@ export default function Cart() {
         </div>        
       ) : (
         <>
-        <div className="d-flex flex-column align-items-center mt-5">
+        <div className="d-flex flex-column align-items-center mt-3">
+        <h5 className="mb-4"><span className="grey">Total carrito:</span><span className="green"> ${getTotalPrice()}.-</span></h5>
             {cart
               .filter((product, index) => {
                 return cart.findIndex((p) => p.id === product.id) === index;
@@ -60,7 +61,8 @@ export default function Cart() {
           <button onClick={clearCart} className="btn btn-outline-danger">
             Vaciar carrito
           </button>
-          <Link to={'/'}><button className="btn btn-outline-success">
+          
+          <Link to={'/checkout'}><button className="btn btn-outline-success">
             Finalizar comprar
           </button></Link>
         </div>

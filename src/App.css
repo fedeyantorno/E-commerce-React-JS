@@ -11,12 +11,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100vw;
   flex-direction: column;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  background: #fff;
+  background: #ebebec !important;
   outline: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -32,7 +33,6 @@ section {
   min-height: 100vh;
   background-position: center;
   background-size: cover;
-  background-color: #fdfdfd;
 }
 
 .section-wrap {
