@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, getDocs, collection, query, where, addDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, getDocs, collection, query, where, addDoc, updateDoc } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -83,12 +83,25 @@ export async function getSingleProduct(id) {
 
 //Agregar una nueva orden de pedido
 export async function sendOrder(order) {
-    const ordersCollection = collection(db, 'orders');
-    try {
-      const docRef = await addDoc(ordersCollection, order);
-      return docRef.id;
-    } catch (error) {
-      console.error('Error al agregar el documento nuevo ', error);
-    }
+  const ordersCollection = collection(db, 'orders');
+  try {
+    const docRef = await addDoc(ordersCollection, order);
+    return docRef.id;
+  } catch (error) {
+    console.error('Error al agregar el documento nuevo ', error);
   }
+}
 
+// Actualizamos el stock de un producto
+export async function updateProductStock(id, quantity) {
+    const itemDocRef = doc(db, 'products', id);
+    try {
+        const snapshot = await getDoc(itemDocRef);
+        if (snapshot.exists()) {
+            const currentStock = snapshot.data().stock;
+            const newStock = currentStock - quantity;
+            await updateDoc(itemDocRef, { stock: newStock });}
+    } catch (error) {
+        console.error('Error al actualizar el stock del producto', error);
+    }
+}
