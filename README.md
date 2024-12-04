@@ -18,7 +18,7 @@ Creación de un e-commerce conformado por listado general de productos, navegaci
 
 ## Visita la web 💻
 
-[Cuisine Bazar](https://federicoyantorno.dev/)
+[Cuisine Bazar](https://cuisinebazar.netlify.app/)
 
 
 ### ScreenShot de la web 📸
