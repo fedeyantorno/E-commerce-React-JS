@@ -22,7 +22,7 @@ export default function CheckoutForm ({ onConfirm }) {
         if (!name) newErrors.name = 'El nombre es requerido!';
         if (!phone) {
             newErrors.phone = 'El teléfono es requerido!';
-        } else if (!/^\+54\s9\s\(\d{2,4}\)\s\d{4}-\d{4}$/.test(phone)) {
+        } else if (!/^\d{10}$/.test(phone)) {
             newErrors.phone = 'El teléfono no es válido!';
         }
         if (!email) {
