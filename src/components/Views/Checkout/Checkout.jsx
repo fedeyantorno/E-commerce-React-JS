@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
-import CheckoutForm from "./CheckoutForm";
-import { CartContext } from "../../../context/CartContext";
-import { sendOrder, updateProductStock } from "../../../firebase/firebase";
-import LoadingComponent from "../../LoadingComponent";
+import { useContext, useState } from "react"
+import CheckoutForm from "./CheckoutForm"
+import { CartContext } from "../../../context/CartContext"
+import { sendOrder, updateProductStock } from "../../../firebase/firebase"
+import LoadingComponent from "../../LoadingComponent"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -57,7 +57,7 @@ export default function Checkout() {
     <div className="flex flex-column align-items-center">
     <h2 className="mb-4">Gracias por su compra!</h2>
     <h4><span className="grey"> El id de su orden es:</span><span className="green"> {orderId}</span></h4>
-    <Link to={'/'}> <button className="btn btn-primary btn-text mt-3 btn-return">{arrowLeftIcon} Volver a la tienda</button> </Link>
+    <Link to={'/'}> <button className="btn btn-outline-success btn-text mt-3">{arrowLeftIcon} Volver a la tienda</button> </Link>
     </div>    
     </> }
     </>

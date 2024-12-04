@@ -72,7 +72,7 @@ export default function CheckoutForm ({ onConfirm }) {
                 <div className="input-container-form mb-3">
                     <label>Teléfono</label>
                     <div className="flex">
-                    <input type="text" className="form-control" placeholder="Ej. 54 9 11 1111-1111" value={phone} onChange={handlePhone} />
+                    <input type="text" className="form-control" placeholder="Ej. 1133335555" value={phone} onChange={handlePhone} />
                     {phoneIcon}
                     </div>
                     <div>
