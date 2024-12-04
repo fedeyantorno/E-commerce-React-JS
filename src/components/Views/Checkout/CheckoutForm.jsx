@@ -90,8 +90,8 @@ export default function CheckoutForm ({ onConfirm }) {
                     </div>
                 </div>
                 <button type="submit" className="btn btn-success btn-text btn-checkout">Confirmar</button>
-            </form>            
-            <Link to={'../cart'}> <button className="btn btn-primary btn-text mt-3 btn-return">{arrowLeftIcon} Volver</button> </Link>
+            </form>
+            <Link to={'../cart'}><button className="btn btn-outline-success btn-text mt-3">{arrowLeftIcon} Volver</button></Link>
         </div>
         </div>
         </>

@@ -9,15 +9,23 @@ export function CartProvider({ children }) {
 
     const [cart, setCart] = useState([]);
 
-    // funciones para administrar cambios en el cart
-    const addItem = (item, quantity) => {
-      // Pasamos la cantidad de un mismo producto
-      const itemWithQuantity = {
-        ...item,
-        quantity: quantity
-      }
-        setCart([...cart, itemWithQuantity])
-    }
+    const addItem = (product) => {
+      setCart((prevCart) => {
+        const existingProduct = prevCart.find(item => item.id === product.id);
+        if (existingProduct) {
+          // Si el producto ya existe, actualizamos la cantidad
+          return prevCart.map(item =>
+            item.id === product.id
+              ? { ...item, quantity: item.quantity + product.quantity }
+              : item
+          );
+        } else {
+          // Si no existe, agregamos el nuevo producto
+          return [...prevCart, product];
+        }
+      });
+    };
+
     // Obtenemos la cantidad de cada producto
     const getItemQuantity = (itemId) => {
         const item = cart.find(item => item.id === itemId);

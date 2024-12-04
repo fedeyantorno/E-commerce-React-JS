@@ -7,13 +7,11 @@ import { CartContext } from "../../../context/CartContext.jsx";
 export default function ItemDetail({product}) {
 
   const [, , addItem] = useContext(CartContext)
-
   const [quantity, setQuantity] = useState(1)
-
   const [sendCart, setSendCart] = useState(false)
 
   const handleClick = () => {
-    addItem(product, quantity)
+    addItem({ ...product, quantity: quantity })
     setSendCart(true)
   }
 
@@ -48,23 +46,16 @@ export default function ItemDetail({product}) {
               {!sendCart ? (
                 <>
                 <div>
-                <ItemCountComponent stock={product.stock}
-                sendCounterValue={sendCounterValue}/>
-              </div>
-              <div>
-              <button onClick={handleClick} className="btn btn-primary btn-text">
-              Añadir al carrito
-            </button>
-              </div>
-              </>
+                <ItemCountComponent stock={product.stock} sendCounterValue={sendCounterValue}/>
+                </div>
+                <div>
+                <button onClick={handleClick} className="btn btn-primary btn-text">Añadir al carrito</button>
+                </div>
+                </>
               ) : (
                 <div >                
-                <Link to={'/cart'}>
-                <button className="btn btn-primary btn-text">
-                  Ir al carrito
-                </button>
-                </Link>
-              </div>
+                <Link to={'/cart'}><button className="btn btn-primary btn-text">Ir al carrito</button></Link>
+                </div>
             )}
           </>
         )}
