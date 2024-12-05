@@ -14,7 +14,12 @@ Creación de e-commerce en React con entorno Vite y React Router Dom para la nav
 ## Características principales:
 
 1. Código optimizado
-2. Buenas practicas
+2. Buenas prácticas
+3. Implementación de React Router Dom para navegar el sitio
+4. Implementación de Firestore Database para el almacenamiento 
+5. Implementación de CSS y Bootstrap para darle estilos el sitio
+6. Uso de Contexto en el carrito para gestionar su información
+
 
 ## Visita la web 💻
 
