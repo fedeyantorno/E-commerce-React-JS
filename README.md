@@ -30,5 +30,5 @@ Creación de un e-commerce conformado por listado general de productos, navegaci
 > 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de Firebase
 
 ```
-Ejecutar servidor de prueba - npm run dev
+Comando para ejecutar servidor de prueba: npm run dev
 ```
