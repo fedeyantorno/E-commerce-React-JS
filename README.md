@@ -2,7 +2,7 @@
 
 ## Reseña del proyecto:
 
-Creación de un e-commerce conformado por listado general de productos, navegación por categorías, detalles de producto, agregado a carrito, administración de carrito.
+Creación de e-commerce en React con entorno Vite y React Router Dom para la navegación, conformado por un listado general de productos al inicio, secciones por categorías, detalles de producto, gestión de carrito y checkout con creación de órdenes. Utiliza Firestore como DB del catálogo de productos, permitiendo su consulta y modificación del stock, y también como almacenamiento de las órdenes creadas en el checkout y la obtención del Id de las mismas.
 
 ## Tecnologías utilizadas:
 
