@@ -21,13 +21,14 @@ Creación de e-commerce en React con entorno Vite y React Router Dom para la nav
 [Cuisine Bazar](https://cuisinebazar.netlify.app/)
 
 
+
 ### ScreenShot de la web 📸
 
 **Home**
 ![Home](./public/home-cuisine-bazar.png)
 
 
-> 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de Firebase
+> 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de tu propia Firebase
 
 ```
 Comando para ejecutar servidor de prueba: npm run dev
