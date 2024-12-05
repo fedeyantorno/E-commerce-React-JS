@@ -39,7 +39,6 @@ ul {
 
 .breadcrumbs {
     display: inline-block;
-    font-size: 12px !important;
     color: black !important;
 }
 
@@ -58,8 +57,15 @@ ul {
 }
 
 .breadcrumbs-link {
-    color: #7d7d7d !important;
-    font-size: 18px;
+    color: #1f7a8c !important;
+    font-size: 16px;
+}
+.breadcrumbs-link:hover {
+    color: #708285 !important;
+}
+
+.breadcrumbs-title {
+    padding-right: 5px;
 }
 
 .green {
@@ -75,4 +81,8 @@ ul {
 
 .hidden {
     visibility: hidden;
+}
+
+.img-product {
+    width: 80%;
 }

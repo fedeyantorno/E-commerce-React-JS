@@ -36,7 +36,7 @@ export default function ItemCart({ product }) {
   return (
     <div className="card mb-4 cart-item">
       <div className="row g-0">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-12">
           <Link to={`/item/${product.id}`}>
             <img
               src={product.image}
@@ -46,7 +46,7 @@ export default function ItemCart({ product }) {
           </Link>
         </div>
 
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-12">
           <div className="card-body d-flex flex-column">
             <Link to={`/item/${product.id}`}>
               <h4 className="card-title">{product.name}</h4>

@@ -1,3 +1,11 @@
+.card {
+    height: 100% !important;
+}
+
+.set-price-btn {
+    padding: 10px !important;
+}
+
 .btn-text {
     font-size: 12px !important;
 }
@@ -12,4 +20,13 @@ h4.card-title {
 
 h4.card-title:hover {
     color: #1f7a8c;
+}
+
+.btn-lightblue {
+    color: #fff !important;
+    background-color: #1f7a8c !important;
+}
+.btn-lightblue:hover {
+    color: #fff !important;
+    background-color: #022b3a !important;
 }

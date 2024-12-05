@@ -15,7 +15,7 @@ export default function App() {
       <CartProvider>
         <HeaderContainer />
         <section className="section-wrap section-home">
-        <div className="container-fluid">
+        <div className="container">
         <Routes>
           <Route exact path="/" element={<ItemListContainer title = 'Bienvenido a Cuisine Bazar'/>} />
           <Route exact path="/category/:categoryId" element={<ItemListContainer title = 'Productos'/>} />
