@@ -5,14 +5,14 @@ import { getSingleProduct } from "../../../firebase/firebase"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import LoadingComponent from "../../LoadingComponent"
+import Loading from "../../Loading"
 
 export default function ItemDetailContainer() {
 
   const { prodId } = useParams()
   const [prod, setProd] = useState(null)
   const [error, setError] = useState(false)
-  // Hacemos un renderizado condicional con el loadingComponent
+  // Hacemos un renderizado condicional con el Loading
   const [loading, setLoading] = useState(true);
 
   const arrowLeftIcon = <FontAwesomeIcon icon={faArrowLeft} />
@@ -44,7 +44,7 @@ export default function ItemDetailContainer() {
   return (
     <div className="container mt-5">
       <h1 className="pb-4 text-center bottom-line">Detalles del Producto</h1>
-      { loading ? <LoadingComponent /> :
+      { loading ? <Loading /> :
         !error ?
         (
         <div className="row">

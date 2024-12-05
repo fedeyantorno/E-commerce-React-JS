@@ -1,4 +1,4 @@
-import './CartWidgetComponent.css'
+import './CartWidget.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react'
@@ -6,7 +6,7 @@ import { CartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
 
 
-export default function CartWidgetComponent() {
+export default function CartWidget() {
   
   const cartIcon = <FontAwesomeIcon icon={faBasketShopping} />
   const [, , , , getQuantity] = useContext(CartContext)

@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../../context/CartContext";
 import ItemCart from "./ItemCart";
-import LoadingComponent from "../../LoadingComponent";
+import Loading from "../../Loading";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,7 @@ export default function Cart() {
   const [cart, setCart, , , , getTotalPrice] = useContext(CartContext);
   // Hacemos un renderizado condicional con el emptyCart
   const [emptyCart, setEmptyCart] = useState(0);
-  // Hacemos un renderizado condicional con el loadingComponent
+  // Hacemos un renderizado condicional con el Loading
   const [loading, setLoading] = useState(true);
 
   const arrowLeftIcon = <FontAwesomeIcon icon={faArrowLeft} />
@@ -37,7 +37,7 @@ export default function Cart() {
     <>
       <h2 className="pb-4 text-center">Carrito</h2>
       {(emptyCart == 0) ? (
-        loading ? <LoadingComponent /> : 
+        loading ? <Loading /> : 
         <div className="d-flex flex-column align-items-center">
         <h5 className="mt-2">Su carrito está vacío</h5>
         <Link to={'/'}><button className="btn btn-outline-success mt-3">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 
-export default function LoadingComponent() {
+export default function Loading() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

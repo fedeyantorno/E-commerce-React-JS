@@ -1,4 +1,4 @@
-import ItemCountComponent from "../../SectionHome/ItemCount/ItemCountComponent";
+import ItemCount from "../../SectionHome/ItemCount/ItemCount";
 import "./ItemDetail.css";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
@@ -47,7 +47,7 @@ export default function ItemDetail({product}) {
               {!sendCart ? (
                 <>
                 <div>
-                <ItemCountComponent stock={product.stock} sendCounterValue={sendCounterValue}/>
+                <ItemCount stock={product.stock} sendCounterValue={sendCounterValue}/>
                 </div>
                 <div>
                 <button onClick={handleClick} className="btn btn-lightblue btn-text">Añadir al carrito</button>

@@ -102,7 +102,7 @@ export default function CheckoutForm ({ onConfirm }) {
                     {errors.email && <p className="text-item-count"><span className="red">{errors.email}</span></p>}
                     </div>
                 </div>
-                <button type="submit" className="btn btn-success btn-text btn-checkout">Confirmar</button>
+                <button type="submit" className="btn btn-success btn-text btn-checkout" disabled={cart.length === 0}>Confirmar</button>
             </form>
             <Link to={'../cart'}><button className="btn btn-outline-success btn-text mt-3">{arrowLeftIcon} Volver</button></Link>
         </div>

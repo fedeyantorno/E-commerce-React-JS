@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import './BrandComponent.css'
+import './Brand.css'
 import cuisineLogo from "./logo-cuisine.png"
 
-const BrandComponent = () => {
+const Brand = () => {
 
     return (
         <div className="logo">
@@ -11,4 +11,4 @@ const BrandComponent = () => {
     )    
 }
 
-export default BrandComponent
+export default Brand

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
-import LoadingComponent from "../../LoadingComponent.jsx";
+import Loading from "../../Loading.jsx";
 import { getProducts, getCategory } from "../../../firebase/firebase";
 
 export default function ItemListContainer({ title }) {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
-  // Hacemos un renderizado condicional con el loadingComponent
+  // Hacemos un renderizado condicional con el Loading
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function ItemListContainer({ title }) {
     <>
       <h2 className="pb-4 text-center">{title} {categoryId}</h2>
       {loading ? (
-        <LoadingComponent />
+        <Loading />
       ) : (
           <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
             {products && products.map((product) => (

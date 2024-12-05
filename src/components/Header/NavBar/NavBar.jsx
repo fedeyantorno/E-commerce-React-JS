@@ -1,6 +1,6 @@
 import './NavBar.css'
-import ButtonMenuComponent from "../ButtonMenu/ButtonMenuComponent"
-import CartWidgetComponent from "../CartWidget/CartWidgetComponent"
+import ButtonMenu from "../ButtonMenu/ButtonMenu"
+import CartWidget from "../CartWidget/CartWidget"
 import { CartContext } from "../../../context/CartContext"
 import { useContext, useEffect, useState } from "react"
 
@@ -17,8 +17,8 @@ const NavBar = () => {
   return (              
         <nav>
           <ul>
-            <ButtonMenuComponent/>
-            {showCartWidget && <CartWidgetComponent /> }            
+            <ButtonMenu/>
+            {showCartWidget && <CartWidget /> }            
           </ul>
         </nav>
   )

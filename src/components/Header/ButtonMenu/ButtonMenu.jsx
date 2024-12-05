@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./ButtonMenuComponent.css";
+import "./ButtonMenu.css";
 import { getProducts } from "../../../firebase/firebase.js";
 
-const ButtonMenuComponent = () => {
+const ButtonMenu = () => {
 
   const [products, setProducts] = useState([]);
 
@@ -24,4 +24,4 @@ const ButtonMenuComponent = () => {
   );
 };
 
-export default ButtonMenuComponent;
+export default ButtonMenu;

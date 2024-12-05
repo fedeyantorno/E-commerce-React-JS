@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import CheckoutForm from "./CheckoutForm"
 import { CartContext } from "../../../context/CartContext"
 import { sendOrder, updateProductStock } from "../../../firebase/firebase"
-import LoadingComponent from "../../LoadingComponent"
+import Loading from "../../Loading"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -50,7 +50,7 @@ export default function Checkout() {
       !loading ? <CheckoutForm onConfirm={createOrder}/> :
       <> 
       <h2>Se está generando su orden</h2>
-      <LoadingComponent />
+      <Loading />
       </>
     ) :
     <>

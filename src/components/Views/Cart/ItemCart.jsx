@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ItemCart.css";
-import ItemCountComponent from "../../SectionHome/ItemCount/ItemCountComponent";
+import ItemCount from "../../SectionHome/ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext.jsx";
 
@@ -66,7 +66,7 @@ export default function ItemCart({ product }) {
             <div className="d-flex justify-content-start align-items-center">
               <p className="text-item-count mt-2">Agregue o elimine items </p>
               <div>
-                <ItemCountComponent stock={product.stock} sendCounterValue={sendCounterValue} initial={quantity}/>
+                <ItemCount stock={product.stock} sendCounterValue={sendCounterValue} initial={quantity}/>
               </div>
             </div>
 
