@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import './BrandComponent.css'
-import cuisineLogo from "./logo-cuisine.png";
+import cuisineLogo from "./logo-cuisine.png"
 
 const BrandComponent = () => {
 

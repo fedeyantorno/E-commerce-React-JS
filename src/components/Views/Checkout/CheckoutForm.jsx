@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faEnvelope, faPhone, faUser, faArrowLeft, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
+import {faEnvelope, faUser, faArrowLeft, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
 import "./Checkout.css"
 import { Link } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useContext } from "react"
+import { CartContext } from "../../../context/CartContext"
 
 
 export default function CheckoutForm ({ onConfirm }) {
@@ -15,7 +16,12 @@ export default function CheckoutForm ({ onConfirm }) {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({})
+
+    const [cart, , , , , getTotalPrice] = useContext(CartContext);
+    const productList = cart.map(product => (
+    <p className="text-item text-center" key={product.id}><span className='grey'>{product.name}</span> x <span className='green'> {product.quantity} unid.</span></p>
+    ))
 
     const validateInputs = () => {
         const newErrors = {};
@@ -37,8 +43,7 @@ export default function CheckoutForm ({ onConfirm }) {
             setTimeout(() => {
                 setErrors({});
             }, 3000);
-        }
-      
+        }      
         return Object.keys(newErrors).length === 0; // Retorna true si no hay errores
     };
 
@@ -58,7 +63,15 @@ export default function CheckoutForm ({ onConfirm }) {
             <div className="d-flex flex-column align-items-center">            
             <form onSubmit={handleConfirm}>
                 <h2>Checkout</h2>
-                <h3>Confirmación de compra</h3>
+
+                {cart.length > 0 &&
+                <>
+                <h3>Productos:</h3>
+                {productList}
+                <h6 className="text-item text-center mt-3"><span className='grey'>Total:</span><span className='green'> ${getTotalPrice()}.-</span></h6>
+                </>
+                }
+                
                 <div className="input-container-form mb-3">
                     <label>Nombre</label>
                     <div className="flex">

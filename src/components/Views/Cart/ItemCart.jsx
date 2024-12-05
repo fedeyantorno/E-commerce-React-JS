@@ -7,7 +7,6 @@ import { CartContext } from "../../../context/CartContext.jsx";
 export default function ItemCart({ product }) {
 
   let [cart, setCart, , getItemQuantity] = useContext(CartContext)
-
   const [quantity, setQuantity] = useState(getItemQuantity(product.id))
 
   const sendCounterValue = (count) => {

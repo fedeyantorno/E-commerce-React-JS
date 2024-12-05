@@ -1,13 +1,12 @@
 import './NavBar.css'
-import ButtonMenuComponent from "../ButtonMenu/ButtonMenuComponent";
-import CartWidgetComponent from "../CartWidget/CartWidgetComponent";
-import { CartContext } from "../../../context/CartContext";
-import { useContext, useEffect, useState } from "react";
+import ButtonMenuComponent from "../ButtonMenu/ButtonMenuComponent"
+import CartWidgetComponent from "../CartWidget/CartWidgetComponent"
+import { CartContext } from "../../../context/CartContext"
+import { useContext, useEffect, useState } from "react"
 
 const NavBar = () => {
 
-  const [cart] = useContext(CartContext);
-
+  const [cart] = useContext(CartContext)
   const [showCartWidget, setShowCartWidget] = useState(false)
 
   useEffect(() => {
@@ -15,8 +14,7 @@ const NavBar = () => {
     setShowCartWidget(false)
   }, [cart])
 
-  return (
-              
+  return (              
         <nav>
           <ul>
             <ButtonMenuComponent/>

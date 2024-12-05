@@ -5,7 +5,6 @@ import ItemListContainer from "./components/SectionHome/ItemListContainer/ItemLi
 import ItemDetailContainer from "./components/Views/ItemDetail/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Views/Cart/Cart";
-import { ItemCountProvider } from "./context/ItemCountContext";
 import Checkout from "./components/Views/Checkout/Checkout";
 
 export default function App() {
@@ -14,7 +13,6 @@ export default function App() {
     <>
       <BrowserRouter>
       <CartProvider>
-        <ItemCountProvider>        
         <HeaderContainer />
         <section className="section-wrap section-home">
         <div className="container-fluid">
@@ -27,7 +25,6 @@ export default function App() {
         </Routes>
         </div>
         </section>
-        </ItemCountProvider>
       </CartProvider>
       </BrowserRouter>
     </>
