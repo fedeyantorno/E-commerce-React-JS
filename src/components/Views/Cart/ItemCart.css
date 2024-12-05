@@ -20,10 +20,16 @@ img.img-item-cart {
 }
 
 .cart-item {
-    height: 200px;
     width: 800px;
     border: solid 2px #022b3a;
 }
+
+@media only screen and (max-width: 450px) {
+    .cart-item {
+        width: 320px;
+        border: solid 2px #022b3a;
+    }
+  }
 
 .block-admin-cant {
     height: 80px !important;

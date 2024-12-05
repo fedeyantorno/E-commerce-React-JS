@@ -33,7 +33,7 @@ Creación de e-commerce en React con entorno Vite y React Router Dom para la nav
 ![Home](./public/home-cuisine-bazar.png)
 
 
-> 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de tu propia Firebase
+> 🔐 Usar el archivo .env.example como ejemplo para cargar los datos de configuración de tu Firebase
 
 ```
 Comando para ejecutar servidor de prueba: npm run dev
