@@ -1,20 +1,20 @@
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../../context/CartContext";
 import ItemCart from "./ItemCart";
-import Loading from "../../Loading";
+import { Loading } from "../../Loading";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2'
 
-export default function Cart() {
-  const [cart, setCart, , , , getTotalPrice] = useContext(CartContext);
+export const Cart = () => {
+  const {cart, setCart, getTotalPrice} = useContext(CartContext);
   // Hacemos un renderizado condicional con el emptyCart
   const [emptyCart, setEmptyCart] = useState(0);
   // Hacemos un renderizado condicional con el Loading
   const [loading, setLoading] = useState(true);
 
   const arrowLeftIcon = <FontAwesomeIcon icon={faArrowLeft} />
-
   
   useEffect(() => {
     setEmptyCart(cart.length)
@@ -28,6 +28,28 @@ export default function Cart() {
     return () => clearTimeout(timer);
   }, [cart]);
 
+  const confirmDelete = () => {
+      Swal.fire({
+        title: "Está seguro?",
+        text: `Está por vaciar el carrito.`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#1f7a8c",
+        confirmButtonText: "Vaciar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Vaciado",
+            text: "Carrito vaciado correctamente.",
+            icon: "success"
+          });
+          clearCart()
+        }
+      });
+     }
+
   const clearCart = () => {
     setCart([])
     setEmptyCart(0)
@@ -40,7 +62,7 @@ export default function Cart() {
         loading ? <Loading /> : 
         <div className="d-flex flex-column align-items-center">
         <h5 className="mt-2">Su carrito está vacío</h5>
-        <Link to={'/'}><button className="btn btn-outline-success mt-3">
+        <Link to={'/products'}><button className="btn btn-outline-success mt-3">
         {arrowLeftIcon} Volver a la tienda
         </button></Link>
         </div>        
@@ -59,10 +81,10 @@ export default function Cart() {
               ))}
         </div>
         <div className="d-flex justify-content-between align-items-center">
-          <Link to={'/'}><button className="btn btn-outline-success">
+          <Link to={'/products'}><button className="btn btn-outline-success">
             Seguir comprando
           </button></Link>
-          <button onClick={clearCart} className="btn btn-outline-danger">
+          <button onClick={confirmDelete} className="btn btn-outline-danger">
             Vaciar carrito
           </button>
           

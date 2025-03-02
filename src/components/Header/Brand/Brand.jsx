@@ -2,13 +2,11 @@ import { Link } from 'react-router-dom'
 import './Brand.css'
 import cuisineLogo from "./logo-cuisine.png"
 
-const Brand = () => {
+export const Brand = () => {
 
     return (
-        <div className="logo">
+        <div className="logo navbar-brand">
           <Link to={'/'}><img src={cuisineLogo} alt="Logo" /></Link>
         </div>
     )    
 }
-
-export default Brand

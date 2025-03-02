@@ -1,0 +1,12 @@
+li > a {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: 400;
+  color: #022b3a !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1f7a8c !important;
+  text-decoration: none; 
+}

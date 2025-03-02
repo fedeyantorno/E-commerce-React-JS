@@ -3,9 +3,8 @@ import { createContext, useState } from "react";
 // Lo que tenenmos que consumir
 export const CartContext = createContext(false);
 
-
 // el que provee acceso al contexto
-export function CartProvider({ children }) {
+export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
@@ -41,7 +40,7 @@ export function CartProvider({ children }) {
     }
 
   return (
-    <CartContext.Provider value={[cart, setCart, addItem, getItemQuantity, getQuantity, getTotalPrice]}>
+    <CartContext.Provider value={{cart, setCart, addItem, getItemQuantity, getQuantity, getTotalPrice}}>
       {children}
     </CartContext.Provider>
   );

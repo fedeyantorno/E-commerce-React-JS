@@ -1,7 +1,9 @@
 .nav-right {
   color: #022b3a;
   padding-left: 15px;
+  padding-right: 15px;
   position: relative;
+  list-style-type: none;
 }
 
 .nav-right > ul > li {

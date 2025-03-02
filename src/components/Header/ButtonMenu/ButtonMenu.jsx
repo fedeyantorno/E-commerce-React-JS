@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ButtonMenu.css";
 import { getProducts } from "../../../firebase/firebase.js";
+import { ButtonSubMenu } from "./ButtonSubMenu.jsx";
 
-const ButtonMenu = () => {
+export const ButtonMenu = () => {
 
   const [products, setProducts] = useState([]);
 
@@ -16,12 +17,15 @@ const ButtonMenu = () => {
   return (
     <>
       {categories.map((category) => (
-        <li key={category}>
-          <Link to={`/category/${category}`}>{category}</Link>
+
+          <li className="nav-item dropdown" key={category}>
+          <Link className="nav-link" aria-expanded="false" to={`/${category}`}>{category}</Link>
+          <ul className="dropdown-menu">
+            <ButtonSubMenu category={category} />
+          </ul>
         </li>
+        
       ))}
     </>
   );
-};
-
-export default ButtonMenu;
+}

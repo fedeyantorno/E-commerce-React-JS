@@ -4,15 +4,16 @@ import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
+import CartContainer from '../CartContainer/CartContainer'
 
 
-export default function CartWidget() {
+export const CartWidget = () => {
   
   const cartIcon = <FontAwesomeIcon icon={faBasketShopping} />
-  const [, , , , getQuantity] = useContext(CartContext)
+  const {cart, getQuantity} = useContext(CartContext)
 
   return (
-    <li className="nav-right">
+    <li className="navbar-brand nav-right hidden-sm hidden-xs">
       <ul>
         <li className="nav-cart">
           <div className="nav-cart-inner">
@@ -21,6 +22,7 @@ export default function CartWidget() {
               <span className="nav-cart-badge">{getQuantity()}</span>
             </Link>
           </div>
+          {cart.length > 0 &&  <CartContainer />}
         </li>
       </ul>
     </li>

@@ -1,12 +1,12 @@
-import Brand from "./Brand/Brand";
-import NavBar from "./NavBar/NavBar";
+import { NavBar } from "./NavBar/NavBar";
 import "./HeaderContainer.css";
+import { CartWidget } from "./CartWidget/CartWidget";
 
-export default function HeaderContainer() {
+export const HeaderContainer = () => {
   return (
     <header>
-      <Brand />
       <NavBar />
+      <CartWidget/>
     </header>
   );
 }

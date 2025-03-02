@@ -1,0 +1,254 @@
+/*-------------------------------------------------------*/
+/* Footer
+/*-------------------------------------------------------*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  }
+
+.footer {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.footer.bg-img {
+  background-size: cover;
+}
+
+.footer-overlay:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.footer.bg-dark .widget-title,
+.footer.bg-dark .footer-widgets a:hover, .footer.bg-img .widget-title,
+.footer.bg-img .footer-widgets a:hover {
+  color: #fff;
+}
+
+/* Footer Widgets
+-------------------------------------------------------*/
+.footer-widgets {
+  padding: 100px 0;
+}
+
+.footer-widgets .widget-title {
+  font-size: 14px;
+}
+
+.footer-widgets a {
+  color: #a2a2a2;
+}
+
+.footer-widgets a:hover {
+  color: #292b32;
+}
+
+.footer-widgets-medium {
+  padding: 120px 0;
+}
+
+.footer-widgets-large {
+  padding: 150px 0;
+}
+
+@media only screen and (max-width: 991px) {
+  .footer-widgets .row > div:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+.widget-title {
+  margin-bottom: 26px;
+  font-size: 16px;
+  position: relative;
+}
+
+.widget-title-margin-bottom {
+  margin-bottom: 43px;
+}
+
+/* Footer Logo
+-------------------------------------------------------*/
+.footer-logo {
+  margin-bottom: 25px;
+}
+
+.footer-logo img {
+  max-height: 29px;
+}
+
+.footer-logo-heading {
+  font-size: 28px;
+}
+
+/* Get in Touch
+-------------------------------------------------------*/
+.footer-get-in-touch-address {
+  line-height: 31px;
+}
+
+.footer-get-in-touch-address-1 {
+  line-height: 24px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.footer-get-in-touch-paragraph {
+  line-height: 31px;
+  margin-bottom: 0;
+}
+
+.footer-get-in-touch-paragraph-1 {
+  margin-bottom: 30px;
+}
+
+/* Footer Newsletter / Social Icons
+-------------------------------------------------------*/
+.newsletter-form-footer {
+  position: relative;
+  margin-top: 25px;
+  display: block;
+}
+
+.newsletter-input-footer[type] {
+  display: block;
+  background-color: transparent;
+  margin-bottom: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid #393c40;
+  border-radius: 0;
+  width: 100%;
+}
+
+.newsletter-input-footer[type]:focus {
+  background-color: transparent;
+  border-color: #b09980;
+}
+
+.newsletter-submit-footer[type],
+.newsletter-submit-icon {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  display: block;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.newsletter-submit-footer[type] {
+  z-index: 1;
+}
+
+.newsletter-submit-footer[type]:focus {
+  background-color: transparent;
+}
+
+.newsletter-submit-icon {
+  z-index: 0;
+}
+
+/* Footer Links
+-------------------------------------------------------*/
+.footer-links li {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.footer-links a {
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* Bottom Footer
+-------------------------------------------------------*/
+.footer-bottom {
+  padding: 24px 0;
+}
+
+.footer-bottom.bg-dark {
+  background-color: #16171d;
+}
+
+.footer-bottom.bg-dark a:hover {
+  color: #fff;
+}
+
+.footer-bottom a {
+  color: #a2a2a2;
+}
+
+.footer-bottom a:hover {
+  color: #000;
+}
+
+.footer-bottom-top-divider {
+  border-top: 1px solid #f7f9fa;
+}
+
+.copyright {
+  display: inline-block;
+  line-height: 32px;
+}
+
+.copyright-fade {
+  color: #c0c0c0;
+}
+
+.copyright-fade a {
+  color: inherit;
+}
+
+.footer-bottom-links li {
+  display: inline-block;
+  line-height: 32px;
+}
+
+.footer-bottom-links li:last-child:after {
+  display: none;
+}
+
+.footer-bottom-links li:after {
+  content: "|";
+  margin-right: 12px;
+  margin-left: 15px;
+  opacity: .7;
+}
+
+.footer-bottom-links li:last-child {
+  margin-right: 0;
+}
+
+/* Payment Systems
+-------------------------------------------------------*/
+.footer-payment-systems li {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.footer-payment-systems i {
+  font-size: 27px;
+  vertical-align: middle;
+  line-height: 32px;
+  display: inline-block;
+}

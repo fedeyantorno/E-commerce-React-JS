@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import ItemDetail from "./ItemDetail.jsx"
-import { getSingleProduct } from "../../../firebase/firebase"
+import { ItemDetail } from "./ItemDetail.jsx"
+import { getProductById } from "../../../firebase/firebase"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import Loading from "../../Loading"
+import { Loading } from "../../Loading"
 
-export default function ItemDetailContainer() {
+export const ItemDetailContainer = () => {
 
   const { prodId } = useParams()
   const [prod, setProd] = useState(null)
@@ -17,35 +17,27 @@ export default function ItemDetailContainer() {
 
   const arrowLeftIcon = <FontAwesomeIcon icon={faArrowLeft} />
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  const fetchProduct = async () => {
+    try {
+      const fetchedProduct = await getProductById(prodId);
+      fetchedProduct ? setProd(fetchedProduct) : setError(true);
       setLoading(false);
-    }, 500);
-    
-    const fetchProduct = async () => {
-      try {
-        const fetchedProduct = await getSingleProduct(prodId);
-        if (fetchedProduct) {
-          setProd(fetchedProduct);
-        } else {
-          setError(true);          
-          return () => clearTimeout(timer);
-        }
-      } catch (err) {
-        console.error('Error al obtener el producto:', err);
-        setError(true);
-      }
-    };
+    } catch (error) {
+      console.error('Error al obtener el producto:', error);
+      setError(true);
+    }
+  };
 
+  useEffect(() => {
     fetchProduct();
-
   }, [prodId]);
+
+  if (loading) return <Loading />
 
   return (
     <div className="container mt-5">
       <h1 className="pb-4 text-center bottom-line">Detalles del Producto</h1>
-      { loading ? <Loading /> :
-        !error ?
+      { !error ?
         (
         <div className="row">
           <div className="col-lg-12">

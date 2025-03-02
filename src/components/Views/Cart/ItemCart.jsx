@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./ItemCart.css";
-import ItemCount from "../../SectionHome/ItemCount/ItemCount";
+import { ItemCount } from "../../SectionHome/ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext.jsx";
+import Swal from 'sweetalert2'
 
 export default function ItemCart({ product }) {
 
-  let [cart, setCart, , getItemQuantity] = useContext(CartContext)
+  let {cart, setCart, getItemQuantity} = useContext(CartContext)
   const [quantity, setQuantity] = useState(getItemQuantity(product.id))
 
   const sendCounterValue = (count) => {
@@ -17,6 +18,28 @@ export default function ItemCart({ product }) {
     )
     setCart(updatedCartQuantity)
   }
+
+  const confirmDelete = () => {
+      Swal.fire({
+        title: "Está seguro?",
+        text: `Está por eliminar el producto "${product.name}".`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#1f7a8c",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Eliminado",
+            text: "Producto eliminado correctamente.",
+            icon: "success"
+          });
+          removeItem()
+        }
+      });
+     }
 
   const removeItem = () => {
     // Filtramos todos los items por ID
@@ -70,7 +93,7 @@ export default function ItemCart({ product }) {
               </div>
             </div>
 
-            <button onClick={removeItem} className="btn btn-primary btn-text">
+            <button onClick={confirmDelete} className="btn btn-primary btn-text">
               Eliminar del carrito
             </button>
 

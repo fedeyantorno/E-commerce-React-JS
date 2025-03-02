@@ -6,7 +6,7 @@ import { useState, useContext } from "react"
 import { CartContext } from "../../../context/CartContext"
 
 
-export default function CheckoutForm ({ onConfirm }) {
+export const CheckoutForm = ({ onConfirm }) => {
     
     const mailIcon = <FontAwesomeIcon icon={faEnvelope} />
     const phoneIcon = <FontAwesomeIcon icon={faMobileScreenButton} />
@@ -18,7 +18,7 @@ export default function CheckoutForm ({ onConfirm }) {
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState({})
 
-    const [cart, , , , , getTotalPrice] = useContext(CartContext);
+    const {cart, getTotalPrice} = useContext(CartContext);
     const productList = cart.map(product => (
     <p className="text-item text-center" key={product.id}><span className='grey'>{product.name}</span> x <span className='green'> {product.quantity} unid.</span></p>
     ))

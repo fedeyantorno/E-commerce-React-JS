@@ -2,6 +2,10 @@
     height: 100% !important;
 }
 
+.card-carousel {
+    height: 410px !important;
+}
+
 .set-price-btn {
     padding: 10px !important;
 }
@@ -30,3 +34,14 @@ h4.card-title:hover {
     color: #fff !important;
     background-color: #022b3a !important;
 }
+
+@media only screen and (max-width: 1024px) {
+    .card-carousel {
+        height: 370px !important;
+    }
+  }
+@media only screen and (max-width: 500px) {
+    .card-carousel {
+        height: 370px !important;
+    }
+  }

@@ -1,17 +1,17 @@
 import { useContext, useState } from "react"
-import CheckoutForm from "./CheckoutForm"
+import { CheckoutForm } from "./CheckoutForm"
 import { CartContext } from "../../../context/CartContext"
 import { sendOrder, updateProductStock } from "../../../firebase/firebase"
-import Loading from "../../Loading"
+import { Loading } from "../../Loading"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-export default function Checkout() {
+export const Checkout = () => {
   const [loading, setLoading] = useState(false)
   const [orderId, setOrderId] = useState('')
 
-  const [cart, setCart , , , , getTotalPrice] = useContext(CartContext)
+  const {cart, setCart, getTotalPrice} = useContext(CartContext)
 
   const arrowLeftIcon = <FontAwesomeIcon icon={faArrowLeft} />
 

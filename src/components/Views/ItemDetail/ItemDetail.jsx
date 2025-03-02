@@ -1,12 +1,12 @@
-import ItemCount from "../../SectionHome/ItemCount/ItemCount";
+import { ItemCount } from "../../SectionHome/ItemCount/ItemCount";
 import "./ItemDetail.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext.jsx";
 
-export default function ItemDetail({product}) {
+export const ItemDetail = ({ product }) => {
 
-  const [, , addItem] = useContext(CartContext)
+  const {addItem, cart} = useContext(CartContext)
   const [quantity, setQuantity] = useState(1)
   const [sendCart, setSendCart] = useState(false)
 
@@ -16,6 +16,11 @@ export default function ItemDetail({product}) {
   }
 
   const sendCounterValue = count => setQuantity(count)
+
+  useEffect(() => {
+    const isInCart = cart.some(item => item.id === product.id);
+    setSendCart(isInCart);
+  }, [cart, product.id]);
 
   return (
     <div className="row">
@@ -53,13 +58,13 @@ export default function ItemDetail({product}) {
                 <button onClick={handleClick} className="btn btn-lightblue btn-text">Añadir al carrito</button>
                 </div>
                 </>
-              ) : (
+                ) : (
                 <div >                
                 <Link to={'/cart'}><button className="btn btn-lightblue btn-text">Ir al carrito</button></Link>
                 </div>
+              )}
+            </>
             )}
-          </>
-        )}
         </div>
       </div>
     </div>
