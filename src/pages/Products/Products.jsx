@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Item } from "../Item/Item";
+import { Item } from "../../components/Item/Item";
 import { useParams } from "react-router-dom";
-import "./ItemListContainer.css";
-import { Loading } from "../../Loading.jsx";
-import { getProducts, getCategory, getSubCategory } from "../../../firebase/firebase";
-import { ButtonFilterCategory } from "../ButtonFilter/ButtonFilterCategory.jsx";
-import { ButtonFilterSubcategory } from "../ButtonFilter/ButtonFilterSubcategory.jsx";
+import "./Products.css";
+import { Loading } from "../../components/Loading.jsx";
+import { getProducts, getCategory, getSubCategory } from "../../firebase/firebase";
+import { ButtonFilterCategory } from "../../components/ButtonFilter/ButtonFilterCategory.jsx";
+import { ButtonFilterSubcategory } from "../../components/ButtonFilter/ButtonFilterSubcategory.jsx";
 
-export const ItemListContainer = ({ title }) => {
+export const Products = ({ title }) => {
   const [products, setProducts] = useState([]);
   const { categoryId, subcategoryId } = useParams();
   // Hacemos un renderizado condicional con el Loading

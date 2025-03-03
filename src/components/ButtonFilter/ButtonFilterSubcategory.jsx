@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../../../firebase/firebase";
+import { getProducts } from "../../firebase/firebase";
 import "./ButtonFilter.css";
 import { Link } from "react-router-dom";
 

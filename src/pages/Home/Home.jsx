@@ -1,5 +1,5 @@
-import Carousel from "../Carousel/Carousel";
-import CarouselCategory from "../CarouselCategory/CarouselCategory";
+import Carousel from "../../components/Carousel/Carousel";
+import CarouselCategory from "../../components/CarouselCategory/CarouselCategory";
 
 export default function Home() {
   return (

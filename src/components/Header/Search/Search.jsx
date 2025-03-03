@@ -4,7 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 import { getProducts } from '../../../firebase/firebase'
 import { Link } from "react-router-dom"
-import { Item } from '../../SectionHome/Item/Item'
+import { Item } from '../../Item/Item'
 
 export const Search = () => {
 

@@ -3,7 +3,7 @@ import {faEnvelope, faUser, faArrowLeft, faMobileScreenButton } from '@fortaweso
 import "./Checkout.css"
 import { Link } from 'react-router-dom'
 import { useState, useContext } from "react"
-import { CartContext } from "../../../context/CartContext"
+import { CartContext } from "../../context/CartContext"
 
 
 export const CheckoutForm = ({ onConfirm }) => {

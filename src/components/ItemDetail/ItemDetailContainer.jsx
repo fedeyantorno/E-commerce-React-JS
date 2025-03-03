@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { ItemDetail } from "./ItemDetail.jsx"
-import { getProductById } from "../../../firebase/firebase"
+import { getProductById } from "../../firebase/firebase"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { Loading } from "../../Loading"
+import { Loading } from "../Loading"
 
 export const ItemDetailContainer = () => {
 

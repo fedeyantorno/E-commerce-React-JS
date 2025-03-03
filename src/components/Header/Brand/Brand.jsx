@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import './Brand.css'
-import cuisineLogo from "./logo-cuisine.png"
+import cuisineLogo from "../../../../public/logo-cuisine.png"
 
 export const Brand = () => {
 

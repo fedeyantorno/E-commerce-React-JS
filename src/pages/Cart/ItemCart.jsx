@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./ItemCart.css";
-import { ItemCount } from "../../SectionHome/ItemCount/ItemCount";
+import { ItemCount } from "../../components/ItemCount/ItemCount";
 import { useContext, useState } from "react";
-import { CartContext } from "../../../context/CartContext.jsx";
+import { CartContext } from "../../context/CartContext.jsx";
 import Swal from 'sweetalert2'
 
 export default function ItemCart({ product }) {

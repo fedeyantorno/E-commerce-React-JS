@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getCategory, getProducts, getSubCategory } from "../../../firebase/firebase"
+import { getCategory, getProducts, getSubCategory } from "../../firebase/firebase"
 import { Item } from "../Item/Item"
 import "./CarouselCategory.css"
 

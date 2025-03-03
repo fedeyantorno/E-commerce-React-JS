@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 import { CheckoutForm } from "./CheckoutForm"
-import { CartContext } from "../../../context/CartContext"
-import { sendOrder, updateProductStock } from "../../../firebase/firebase"
-import { Loading } from "../../Loading"
+import { CartContext } from "../../context/CartContext"
+import { sendOrder, updateProductStock } from "../../firebase/firebase"
+import { Loading } from "../../components/Loading"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'

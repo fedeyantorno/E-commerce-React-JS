@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ButtonFilter.css";
-import { getProducts } from "../../../firebase/firebase.js";
+import { getProducts } from "../../firebase/firebase.js";
 
 export const ButtonFilterCategory = () => {
 
